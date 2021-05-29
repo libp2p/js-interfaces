@@ -212,6 +212,8 @@ class Connection {
    * @returns {Promise<void>}
    */
   async close () {
+    this.streams.map(s => s.close && s.close())
+
     if (this.stat.status === CLOSED) {
       return
     }
