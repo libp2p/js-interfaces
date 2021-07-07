@@ -222,6 +222,8 @@ class Connection {
 
     this.stat.status = CLOSING
 
+    await Promise.all(this.streams.map(s => s.close && s.close()))
+
     // Close raw connection
     this._closing = await this._close()
 

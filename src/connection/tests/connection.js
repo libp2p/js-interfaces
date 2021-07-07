@@ -3,9 +3,7 @@
 
 'use strict'
 
-const chai = require('chai')
-const expect = chai.expect
-chai.use(require('dirty-chai'))
+const { expect } = require('aegir/utils/chai')
 const sinon = require('sinon')
 const Status = require('../status')
 

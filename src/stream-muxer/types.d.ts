@@ -39,7 +39,9 @@ export type MuxedTimeline = {
 }
 
 export interface MuxedStream extends AsyncIterable<Uint8Array | BufferList> {
-  close: () => void;
+  close: () => Promise<void>;
+  closeRead: () => Promise<void>;
+  closeWrite: () => Promise<void>;
   abort: () => void;
   reset: () => void;
   sink: Sink;
